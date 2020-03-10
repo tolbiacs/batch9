@@ -1,6 +1,4 @@
-<?php
-
-require("./controller/controller.php");
+<?php require("./controller/controller.php");
 
 
 try{

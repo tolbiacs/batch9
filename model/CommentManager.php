@@ -1,5 +1,4 @@
 <?php
-//namespace WCoding\Blog\Model;
 require_once("./model/Manager.php");
 
 class CommentManager extends Manager
@@ -18,6 +17,7 @@ class CommentManager extends Manager
         $comments->execute(array($postId));
         return $comments;
     }
+//<<<<<<< HEAD
         //command shift i auto generates the docs
     /**
      * add a comment to the db
@@ -53,3 +53,23 @@ class CommentManager extends Manager
 
 
 
+=======
+    
+        
+    /**
+     * Insert a comment in the database and table comment
+     *
+     * @param  String   $autor          The author of the comment
+     * @param  String   $comment        The comment to insert
+     * @param  Integer  $id_articles    The id of the related article
+     * @return void
+     */
+    public function insertComment($autor,$comment,$id_articles) {
+        $db = $this->dbConnect();
+        $status = $db->exec("INSERT INTO `comments`(`id_articles`, `autor`, `comment`) VALUES ($id_articles, '$autor','$comment') ");
+        if(!$status) {
+            throw new PDOException ("Impossible to add the comment !", 20);
+        }
+    }
+}
+>>>>>>> 4498783994008c985cbbece6553006e1f7044a75

@@ -8,6 +8,7 @@
 <div class="news">
     <h3>
         <?= htmlspecialchars($post['title']); ?>
+<<<<<<< HEAD
         <em>le <?= $post['date_creation_fr']; ?></em>
     </h3>
     
@@ -57,3 +58,40 @@ while ($comment = $comments->fetch())
 ?>
 <?php $content = ob_get_clean();?>
 <?php require("template.php");?>
+=======
+        <em>The <?= $post['date_creation_fr']; ?></em>
+    </h3>
+    
+    <p>
+    <?= nl2br(htmlspecialchars($post['content']));?>
+    </p>
+</div>
+<div id="formAddComment">
+    <form method="POST" action="index.php">
+        <input type="hidden" name="action" value="postComment"/>
+        <input type="hidden" name="article" value="<?= htmlspecialchars($post['id']); ?>"/>
+        <label for="login"> Login : <input type="text" name="login"/></label> </br>
+        <label for="message"> Message : <input type="text" name="message"/></label>
+        <input type="submit" value="Post"/>
+    </form>
+    <?php 
+    if(isset($_REQUEST['status'])) {
+        $status = $_REQUEST['status'];
+        echo "<div class='error'>$status </div>";
+    }
+    ?>
+</div>
+<h2>Comments</h2>
+
+<?php
+while ($comment = $comments->fetch())
+{
+?>
+<p><strong><?= htmlspecialchars($comment['autor']); ?></strong> le <?= $comment['date_comment_fr']; ?></p>
+<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
+<?php
+}
+?>
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php');?>
+>>>>>>> 4498783994008c985cbbece6553006e1f7044a75
