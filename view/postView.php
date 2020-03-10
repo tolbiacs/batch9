@@ -1,6 +1,6 @@
-<?php $title = 'Mon blog';?>
+<?php $title ="My blog - comments" ?>
 
-<?php ob_start();?>
+<?php ob_start();?> 
 <h1>My super blog !</h1>
 <p><a href="index.php">Back to the ticket list</a></p>
 

@@ -23,9 +23,26 @@ try {
         listPosts();
     }
 } catch (Exception $e) {
+//     } 
+// }
+// catch(PDOException $e) {
+//     $msg = $e->getMessage();
+//     $code = $e->getCode();
+//     require('./view/errorViewPDO.php');
+// }
+// catch(Exception $e) {
+//     $msg = $e->getMessage();
+//     $code = $e->getCode();
+//     $line = $e->getLine();
+//     $file = $e->getFile();
+//     require('./view/errorView.php');
+// }
+// catch(Throwable $e) {
     $msg = $e->getMessage();
     $code = $e->getCode();
     $line = $e->getLine();
     $file = $e->getFile();
     require ('./view/errorView.php');
 }
+
+

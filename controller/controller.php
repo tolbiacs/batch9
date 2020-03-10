@@ -22,7 +22,7 @@ function post($postId) {
 }
 
 function postComment($autor,$content,$id_articles) {
-    $postManager = new PostManager();
+    $postManager = new CommentManager();
     $postManager->addComment($autor,$content,$id_articles);
     header("Location:index.php?action=post&article=$id_articles&status=success");
 }
