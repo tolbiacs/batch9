@@ -10,13 +10,13 @@ try {
             if (isset($_REQUEST['article']) AND $_REQUEST['article']>0) {
                 post($_REQUEST['article']);
             } else {
-                throw new Exception('no ID for the article requested');
+                throw new Exception('No ID for the article requested');
             }
         } else if ($action == 'postComment') {
             if (!empty($_POST['login']) AND !empty($_POST['comm']) AND !empty($_POST['article'])) {
                 postComment($_POST['login'],$_POST['comm'],$_POST['article']);
             } else {
-                throw new Exception('fill the form please');
+                throw new Exception('Fill in the form please');
             }
         }
     } else {
