@@ -1,10 +1,8 @@
 <?php
-// THIS IS A TEST COMMENT MADE TODAY MARCH 10th TUES BY JEREMY
 require_once('./model/PostManager.php');
 require_once('./model/CommentManager.php');
 use \WCoding\Blog\Model\PostManager;
 use \WCoding\Blog\Model\CommentManager;
-
 function listPosts() {
     $postManager = new PostManager();
     $articles = $postManager->getPosts();
@@ -19,15 +17,8 @@ function post($postId) {
     require("./view/postView.php");
 }
 
-function postComment($autor,$content,$id_article) {
+function postComment($autor,$content,$id_articles) {
     $commentManager = new CommentManager();
-    $commentManager->insertComment($autor,$content,$id_article);
-    $status = insertComment($autor,$content,$id_article);
-    if($status === 'failure') {
-        die('impossible to add the comment');
-    } else {
-    // $insert = insertComments($_POST['article']);
-    header("Location:index.php?action=post&article=$id_article&success=$status");
-    // require("./view/postView.php");  
-}
+    $commentManager->insertComment($autor,$content,$id_articles);
+    header("Location:index.php?action=post&article=$id_articles");
 }
