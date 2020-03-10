@@ -20,7 +20,7 @@ try{
                 
                 postComments($_POST['author'],$_POST['comment'],$_POST['article']);
             } else {
-                throw new Exception( "fill the form");
+                throw new Exception( "fill the form please");
             }
         }
     } else {
